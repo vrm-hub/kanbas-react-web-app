@@ -1,79 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kanbas Home</title>
-    <!-- <style>
-      table {
-        width: 100%;
-        height: 100vh;
-        table-layout: fixed;
-      }
+<head>
+    <meta charset="UTF-8"/>
+    <title>Profile</title>
 
-      td {
-        vertical-align: top;
-        padding: 10px;
-      }
-    </style> -->
-  </head>
-
-  <body>
-    <table width="100%">
-      <tr valign="baseline">
-        <td>
-          <ul>
-            <li><a href="../account-navigation.html">Account</a></li>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="../../courses/course-navigation.html">Courses</a></li>
-            <li><a href="#">Calendar</a></li>
-            <li><a href="#">Inbox</a></li>
-            <li><a href="#">History</a></li>
-            <li><a href="#">Studio</a></li>
-            <li><a href="#">Commons</a></li>
-            <li><a href="#">Help</a></li>
-          </ul>
-        </td>
-        <td>
-          <ul>
-            <li><a href="#">Notifications</a></li>
-            <li><a href="index.html">Profile</a></li>
-            <li><a href="#">Files</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Portfolios</a></li>
-            <li><a href="#">Shared Content</a></li>
-            <li><a href="#">The Hub</a></li>
-            <li><a href="#">Qwickly Course Tool</a></li>
-            <li><a href="#">Global Announcements</a></li>
-          </ul>
-        </td>
-        <td>
-          <p>Jose Annunziato's Profile</p>
-          <hr />
-
-          <div
-            style="
-              display: flex;
-              justify-content: space-between;
-              align-items: center;
-            "
-          >
-            <h2>Jose Annunziato</h2>
-            <a href="./edit.html"><button>Edit Profile</button></a>
-          </div>
-          <h3>Contact</h3>
-          <p>
-            No registered services, you can add some on the
-            <a href="../../courses/settings/index.html">settings</a> page.
-          </p>
-          <h3>Biography</h3>
-          <p>
-            Faculty, Software Engineer, AI, Space and renewables enthusiast.
-          </p>
-          <h3>Links</h3>
-          <a href="www.youtube.com">YouTube</a>
-        </td>
-      </tr>
-    </table>
-  </body>
+    <link href="../../index.css" rel="stylesheet"/>
+    <link href="./index.css" rel="stylesheet"/>
+    <link
+            href="../../../vendors/bootstrap/css/bootstrap.min.css"
+            rel="stylesheet"
+    />
+    <script
+            src="https://kit.fontawesome.com/fea6b74a57.js"
+            crossorigin="anonymous"
+    ></script>
+</head>
+<body>
+<div class="kb-sidebar position-fixed">
+    <div class="kb-sidebar-logo">
+        <a href="#">
+            <img
+                    src="../../../images/neu-logo.png"
+                    width="60px"
+                    height="48px"
+            />
+        </a>
+    </div>
+    <div class="kb-sidebar-selected">
+        <a href="../../../kanbas/accounts/profile/index.html">
+            <i class="fa fa-2x fa-user kb-sidebar-account"></i>
+            <div class="kb-sidebar-text">Account</div>
+        </a>
+    </div>
+    <div class="kb-sidebar-unselected">
+        <a href="../../../kanbas/dashboard/index.html">
+            <i class="fa fa-2x fa-gauge kb-sidebar-icon"></i>
+            <div class="kb-sidebar-text">Dashboard</div>
+        </a>
+    </div>
+    <div class="kb-sidebar-unselected">
+        <a href="../../courses/home/index.html">
+            <i class="fa fa-2x fa-book kb-sidebar-icon"></i>
+            <div class="kb-sidebar-text">Courses</div>
+        </a>
+    </div>
+    <div class="kb-sidebar-unselected">
+        <a href="#">
+            <i class="fa fa-2x fa-calendar-check kb-sidebar-icon"></i>
+            <div class="kb-sidebar-text">Calendar</div>
+        </a>
+    </div>
+    <div class="kb-sidebar-unselected">
+        <a href="#">
+            <i class="fa fa-2x fa-inbox kb-sidebar-icon"></i>
+            <div class="kb-sidebar-text">Inbox</div>
+        </a>
+    </div>
+    <div class="kb-sidebar-unselected">
+        <a href="#">
+            <i class="fa fa-2x fa-clock kb-sidebar-icon"></i>
+            <div class="kb-sidebar-text">History</div>
+        </a>
+    </div>
+    <div class="kb-sidebar-unselected">
+        <a href="#">
+            <i class="fa fa-2x fa-tv kb-sidebar-icon"></i>
+            <div class="kb-sidebar-text">Studio</div>
+        </a>
+    </div>
+    <div class="kb-sidebar-unselected">
+        <a href="#">
+            <i class="fa fa-2x fa-arrow-right-from-bracket kb-sidebar-icon"></i>
+            <div class="kb-sidebar-text">Commons</div>
+        </a>
+    </div>
+    <div class="kb-sidebar-unselected">
+        <a href="#">
+            <i class="fa fa-2x fa-question kb-sidebar-icon"></i>
+            <div class="kb-sidebar-text">Help</div>
+        </a>
+    </div>
+</div>
+<div class="wd-flex-row-container">
+    <div class="kb-header kb-header-icon">
+        <i class="fa fa-2x fa-bars"></i>
+    </div>
+    <div class="kb-header wd-flex-grow-1">
+        <span class="kb-header-text">Vinay R Menon's Profile</span>
+    </div>
+</div>
+<div class="wd-flex-row-container">
+    <div class="kb-header-line wd-flex-grow-1">
+        <hr/>
+    </div>
+</div>
+<div class="wd-flex-row-container">
+    <div class="kb-sub-menu">
+        <div class="kb-sub-menu-unselected">
+            <a href="#">Notifications</a>
+        </div>
+        <div class="kb-sub-menu-selected">
+            <a href="../../../kanbas/accounts/profile/index.html">Profile</a>
+        </div>
+        <div class="kb-sub-menu-unselected">
+            <a href="#">Files</a>
+        </div>
+        <div class="kb-sub-menu-unselected">
+            <a href="#">Settings</a>
+        </div>
+        <div class="kb-sub-menu-unselected">
+            <a href="#">ePortfolios</a>
+        </div>
+        <div class="kb-sub-menu-unselected">
+            <a href="#">Shared Content</a>
+        </div>
+        <div class="kb-sub-menu-unselected">
+            <a href="#">The Hub</a>
+        </div>
+        <div class="kb-sub-menu-unselected">
+            <a href="#">Qwickly Course Tools</a>
+        </div>
+        <div class="kb-sub-menu-unselected">
+            <a href="#">Global Announcements</a>
+        </div>
+    </div>
+    <div class="kb-body-text wd-flex-grow-1">
+        <a href="../../../kanbas/accounts/profile/edit.html">
+            <button
+                    type="button"
+                    class="btn btn-secondary float-end"
+            >
+                <i class="fa fa-1x fa-pencil"></i>
+                Edit Profile
+            </button>
+        </a>
+        <i class="fa fa-10x fa-user kb-bt-image"></i>
+        <h2>Vinay R Menon</h2>
+        <br/>
+        <h3>Contact</h3>
+        No registered services, you can add some on the
+        <a class="kb-body-text-link" href="#">settings</a> page.
+        <br/>
+        <br/>
+        <h3>Biography</h3>
+        Student, MS in CS, NEU
+        <br/>
+        <br/>
+        <h3>Links</h3>
+        <i class="fa fa-1x fa-link"></i>
+        <a class="kb-body-text-link" href="https://www.youtube.com/@WebDevTV"
+        >YouTube</a
+        >
+    </div>
+</div>
+</body>
 </html>
