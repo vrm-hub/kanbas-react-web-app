@@ -1,0 +1,12 @@
+.kb-bt-image {
+    padding: 5px;
+}
+
+.kb-bt-edit-ref {
+    font-weight: bold;
+    text-align: center;
+}
+
+.kb-bt-edit-del {
+    color: red;
+}

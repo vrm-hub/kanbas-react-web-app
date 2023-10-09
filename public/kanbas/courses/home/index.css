@@ -1,0 +1,124 @@
+.kb-feed {
+    padding: 8px;
+}
+
+.kb-feed-circle-icon {
+    color: lime;
+}
+
+.kb-feed .btn {
+    margin: 1px;
+}
+
+.kb-feed ul {
+    margin: 8px;
+}
+
+.list-group > .list-group-item {
+    padding: 12px;
+}
+
+.list-group > .kb-feed-assignment {
+    border-left-color: green;
+    border-left-width: 3px;
+}
+
+.list-group a {
+    font-size: 16px;
+    padding-left: 0;
+}
+
+.list-group a {
+    text-decoration: none;
+    color: black;
+}
+
+.kb-feed-module-title > span {
+    margin-left: 8px;
+}
+
+.kb-feed-assignment > span {
+    margin-left: 15px;
+}
+
+.kb-feed-section-title {
+    font-size: 16px;
+}
+
+.kb-feed-entry-title {
+    font-size: 16px;
+    /* padding-left: 32px; */
+}
+
+.kb-feed-link-title {
+    font-size: 16px;
+    color: red;
+}
+
+.kb-feed-assignment-description {
+    font-size: 14px;
+}
+
+.kb-feed-entry-icon-box {
+    padding-right: 0;
+}
+
+.kb-feed-entry-icon-box > .fa-link {
+    color: green;
+}
+
+
+.kb-feed-assignment-status-box > .fa-circle-check {
+    padding-right: 30px;
+    color: green;
+}
+
+.kb-feed-assignment-status-box > .fa-circle-check {
+    padding-right: 30px;
+    color: green;
+}
+
+.kb-feed-assignment-status-box > .fa-ellipsis-vertical {
+    padding-right: 15px;
+}
+
+.kb-etc {
+    padding: 8px 28px 8px 8px;
+}
+
+.kb-etc-unpublish {
+    float: left;
+    width: 48%;
+    margin: 1px 0 8px 1px;
+}
+
+.kb-etc-published {
+    width: 48%;
+    margin: 1px 1px 8px 0;
+}
+
+.kb-etc .d-grid > .btn {
+    text-align: left;
+}
+
+.kb-etc .d-grid > .btn > i {
+    margin-left: 5px;
+}
+
+.kb-etc .d-grid span {
+    font-size: 16px;
+}
+
+.kb-etc-header-line {
+    margin-top: 0px;
+}
+
+.kb-etc-bottom-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.kb-etc-bottom a {
+    color: red;
+    text-decoration: none;
+}
