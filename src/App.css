@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 /* ================== NAVIGATION SIDEBAR ==================== */
 
 .nav__main {
@@ -87,6 +88,7 @@
     right: 10px;
     font-size: 1.5rem;
     cursor: pointer;
+    float: left;
 }
 
 .card__text {
