@@ -243,6 +243,7 @@
     flex-direction: column;
     gap: 2rem;
     width: calc(100% - 300px);
+    overflow-x: auto;
 }
 
 .home__body__layout {
@@ -260,6 +261,7 @@
     background-color: lightgray;
     border-radius: 0.2rem;
     max-height: 6rem;
+    min-width: 100%;
 }
 
 .home__item__head {
@@ -269,13 +271,34 @@
 }
 
 .home__item__head__left {
-    white-space: normal;
+    white-space: nowrap;
     display: flex;
     gap: 10px;
     justify-content: center;
     align-items: center;
     height: 100%;
     overflow-wrap: break-word;
+    flex-wrap: nowrap;
+}
+
+/* Webkit browsers like Chrome, Safari */
+.home__body::-webkit-scrollbar {
+    height: 8px;
+}
+
+.home__body::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+
+.home__body::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Firefox */
+.home__body {
+    scrollbar-width: thin;
+    scrollbar-color: #888 #f5f5f5;
 }
 
 .home__icons {
