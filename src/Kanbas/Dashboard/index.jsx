@@ -38,10 +38,10 @@ const Dashboard = () => {
                                 {name}
                             </Link>
                             <p className="card__course__text">
-                                {number}_{startDate}
+                                <h5>{number}_{startDate}</h5>
                             </p>
                             <p className="card__course__text">
-                                {topic}
+                                <small>{topic}</small>
                             </p>
                             <div className="card__edit-icon">
                                 <FaEdit/>
