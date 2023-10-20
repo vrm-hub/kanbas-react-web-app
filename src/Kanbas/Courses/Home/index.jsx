@@ -1,12 +1,11 @@
 import React from "react";
 import {useParams} from "react-router-dom";
-import {modules} from "../../Database";
+import {assignments, modules} from "../../Database";
 // icons
 import {CiMenuKebab} from "react-icons/ci";
 import {VscPassFilled} from "react-icons/vsc";
 import {AiOutlinePlus} from "react-icons/ai";
 import {MdDragIndicator} from "react-icons/md";
-import {BiSolidErrorCircle} from "react-icons/bi";
 
 const rightPanelData = [
     {name: "Importing Existing Content"},
@@ -20,6 +19,9 @@ const rightPanelData = [
 
 const Home = () => {
     const {courseId} = useParams();
+    const courseAssignments = assignments.filter(
+        (assignment) => assignment.course === courseId,
+    );
 
     /**
      * JSX
@@ -87,14 +89,13 @@ const Home = () => {
                     <div className="right__panel__bottom">
                         <h3>To Do</h3>
                         <hr/>
-                        <div className="right__panel__bottom__top">
-                            <div className="bottom__top">
-                                <p>
-                                    <BiSolidErrorCircle/>
-                                </p>
-                                <p> Grade A1</p>
-                            </div>
-                            <p>100 points + sep 18 </p>
+                        <div>
+                            {courseAssignments.map((assignment, index) => (
+                                <div className="grade-assg-title">
+                                    <h5>Grade {assignment.title}</h5>
+                                    <p>100 points . Due Oct 4 at 11:59pm </p>
+                                </div>
+                            ))}
                         </div>
                     </div>
                 </div>
