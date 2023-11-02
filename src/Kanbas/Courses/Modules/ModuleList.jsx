@@ -1,6 +1,11 @@
 import React, {useState} from "react";
 import {useParams} from "react-router-dom";
 import {modules as initialmodules} from "../../Database/index.js";
+import {AiOutlineDelete, AiOutlineEdit, AiOutlinePlus} from "react-icons/ai";
+import {VscPassFilled} from "react-icons/vsc";
+import {CiMenuKebab} from "react-icons/ci";
+import {MdDragIndicator} from "react-icons/md";
+
 
 function ModuleList() {
     const {courseId} = useParams();
@@ -36,28 +41,69 @@ function ModuleList() {
 
     return (
         <div className="module__list">
+            {/* module list buttons */}
             <div className="module__list__btns">
-                <button onClick={addModule}>Add</button>
-                <button onClick={updateModule}>Update</button>
-                <input value={module.name}
-                       onChange={(e) => setModule({...module, name: e.target.value})}
-                />
-                <textarea value={module.description}
-                          onChange={(e) => setModule({...module, description: e.target.value})}
-                />
+                <button className="btn btn-secondary">Collapse All</button>
+                <button className="btn btn-secondary">View Progress</button>
+                <button className="btn btn-secondary">
+                    <VscPassFilled/> Publish All
+                </button>
+                <button onClick={addModule} className="btn btn-danger">
+                    <AiOutlinePlus/>
+                    Module
+                </button>
+                <button className="btn btn-secondary">
+                    <CiMenuKebab/>
+                </button>
             </div>
             <hr/>
+            {/* Add/Edit Module Form */}
+            <div className="module__list__form">
+                <input
+                    value={module.name}
+                    className="form-control"
+                    onChange={(e) => setModule({...module, name: e.target.value})}
+                    placeholder="Module Name"
+                />
+                <textarea
+                    value={module.description}
+                    className="form-control"
+                    onChange={(e) => setModule({...module, description: e.target.value})}
+                    placeholder="Module Description"
+                />
+                <button onClick={addModule}>Add</button>
+                <button onClick={updateModule}>Update</button>
+            </div>
+            <hr/>
+            {/* module list body */}
             <div className="module__list__body">
                 {modules
                     .filter((module) => module.course === courseId)
                     .map((module, index) => (
-                        <div key={index} className="module__list__item">
-                            <button onClick={() => setModule(module)}>Edit</button>
-                            <button onClick={() => deleteModule(module._id)}>Delete</button>
-                            <h3>{module.name}</h3>
-                            <p>{module.description}</p>
-                            <p>{module._id}</p>
-                        </div>
+                        <React.Fragment key={index}>
+                            {/* module list items */}
+                            <div className="module__list__item">
+                                <div className="module__list__item__head">
+                                    <div className="module__list__item__head__left">
+                                        <p>
+                                            <MdDragIndicator
+                                                style={{fontSize: "1.5rem", marginBottom: "-.5rem"}}
+                                            />
+                                        </p>
+                                        <h3>{module.name}</h3>
+                                    </div>
+                                    {/* module list icons */}
+                                    <div className="module__list__icons">
+                                        <AiOutlineEdit onClick={() => setModule(module)} style={{fontSize: "1.5rem"}}/>
+                                        <AiOutlineDelete onClick={() => deleteModule(module._id)}
+                                                         style={{fontSize: "1.5rem", color: "red"}}/>
+                                        <CiMenuKebab style={{fontSize: "1.5rem"}}/>
+                                    </div>
+                                </div>
+                                {/* module list description */}
+                                <div className="module__list__desc">{module.description}</div>
+                            </div>
+                        </React.Fragment>
                     ))}
             </div>
         </div>
