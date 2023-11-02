@@ -224,6 +224,21 @@
     height: 100%;
 }
 
+.module__list__form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.module-input,
+.module-textarea {
+    flex: 1;
+}
+
+.module-btn {
+    margin-left: 10px;
+}
+
 /* ================== HOME ==================== */
 
 .home {

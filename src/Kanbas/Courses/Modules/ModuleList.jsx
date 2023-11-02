@@ -6,7 +6,6 @@ import {VscPassFilled} from "react-icons/vsc";
 import {CiMenuKebab} from "react-icons/ci";
 import {MdDragIndicator} from "react-icons/md";
 
-
 function ModuleList() {
     const {courseId} = useParams();
     const [modules, setModules] = useState(initialmodules);
@@ -61,18 +60,18 @@ function ModuleList() {
             <div className="module__list__form">
                 <input
                     value={module.name}
-                    className="form-control"
+                    className="form-control module-input"
                     onChange={(e) => setModule({...module, name: e.target.value})}
                     placeholder="Module Name"
                 />
                 <textarea
                     value={module.description}
-                    className="form-control"
+                    className="form-control module-textarea"
                     onChange={(e) => setModule({...module, description: e.target.value})}
                     placeholder="Module Description"
                 />
-                <button onClick={addModule}>Add</button>
-                <button onClick={updateModule}>Update</button>
+                <button onClick={addModule} className="btn btn-success module-btn">Add</button>
+                <button onClick={updateModule} className="btn btn-primary module-btn">Update</button>
             </div>
             <hr/>
             {/* module list body */}
