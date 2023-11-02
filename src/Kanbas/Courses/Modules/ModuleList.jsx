@@ -1,69 +1,67 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { modules } from "../../Database";
-// icons
-import { CiMenuKebab } from "react-icons/ci";
-import { VscPassFilled } from "react-icons/vsc";
-import { AiOutlinePlus } from "react-icons/ai";
-import { MdDragIndicator } from "react-icons/md";
+import React, {useState} from "react";
+import {useParams} from "react-router-dom";
+import {modules as initialmodules} from "../../Database/index.js";
 
 function ModuleList() {
-  const { courseId } = useParams();
+    const {courseId} = useParams();
+    const [modules, setModules] = useState(initialmodules);
+    const [module, setModule] = useState({
+        name: "New Module",
+        description: "New Description",
+        course: courseId,
+    });
 
-  /**
-   * JSX
-   */
-  return (
-    <div className="module__list">
-      {/* module list buttons */}
-      <div className="module__list__btns">
-        <button className="btn btn-secondary">Collpase All</button>
-        <button className="btn btn-secondary">View Progress</button>
-        <button className="btn btn-secondary">
-          <VscPassFilled /> Publish All
-        </button>
-        <button className="btn btn-danger">
-          <AiOutlinePlus />
-          Module
-        </button>
-        <button className="btn btn-secondary">
-          <CiMenuKebab />
-        </button>
-      </div>
-      <hr />
-      {/* module list body */}
-      <div className="module__list__body">
-        {modules
-          ?.filter((module) => module.course === courseId)
-          .map((module, index) => (
-            <React.Fragment key={index}>
-              {/* module list items */}
-              <div className="module__list__item">
-                <div className="module__list__item__head">
-                  <div className="module__list__item__head__left">
-                    <p>
-                      <MdDragIndicator
-                        style={{ fontSize: "1.5rem", marginBottom: "-.5rem" }}
-                      />
-                    </p>
-                    <h3>{module.name}</h3>
-                  </div>
-                  {/* module list icons */}
-                  <div className="module__list__icons">
-                    <VscPassFilled
-                      style={{ color: "green", fontSize: "1.5rem" }}
-                    />
-                    <AiOutlinePlus style={{ fontSize: "1.5rem" }} />
-                    <CiMenuKebab style={{ fontSize: "1.5rem" }} />
-                  </div>
-                </div>
-                {/* module list description */}
-                <div className="module__list__desc">{module.description}</div>
-              </div>
-            </React.Fragment>
-          ))}
-      </div>
-    </div>
-  );
+    const addModule = () => {
+        setModules([
+            {...module, _id: new Date().getTime().toString()},
+            ...modules,
+        ]);
+    };
+
+    const deleteModule = (moduleId) => {
+        setModules(modules.filter((module) => module._id !== moduleId));
+    };
+
+    const updateModule = () => {
+        setModules(
+            modules.map((m) => {
+                if (m._id === module._id) {
+                    return module;
+                } else {
+                    return m;
+                }
+            })
+        );
+    };
+
+    return (
+        <div className="module__list">
+            <div className="module__list__btns">
+                <button onClick={addModule}>Add</button>
+                <button onClick={updateModule}>Update</button>
+                <input value={module.name}
+                       onChange={(e) => setModule({...module, name: e.target.value})}
+                />
+                <textarea value={module.description}
+                          onChange={(e) => setModule({...module, description: e.target.value})}
+                />
+            </div>
+            <hr/>
+            <div className="module__list__body">
+                {modules
+                    .filter((module) => module.course === courseId)
+                    .map((module, index) => (
+                        <div key={index} className="module__list__item">
+                            <button onClick={() => setModule(module)}>Edit</button>
+                            <button onClick={() => deleteModule(module._id)}>Delete</button>
+                            <h3>{module.name}</h3>
+                            <p>{module.description}</p>
+                            <p>{module._id}</p>
+                        </div>
+                    ))}
+            </div>
+        </div>
+    );
 }
+
 export default ModuleList;

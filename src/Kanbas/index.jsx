@@ -3,9 +3,10 @@ import {Navigate, Route, Routes} from "react-router-dom";
 import KanbasNavigation from "./KanbasNavigation";
 import Dashboard from "./Dashboard";
 import Courses from "./Courses";
+import {courses as initialCourses} from "./Database/index.js";
 
 function Kanbas() {
-    const [courses, setCourses] = useState([]); // Initial state from db or an empty array
+    const [courses, setCourses] = useState(initialCourses); // Initial state from db or an empty array
     const [course, setCourse] = useState({
         name: "New Course",
         number: "New Number",
