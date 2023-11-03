@@ -1,7 +1,6 @@
 import React from "react";
 import {Navigate, Route, Routes, useLocation, useParams,} from "react-router-dom";
 // data
-
 // icons
 import {AiOutlineMenu, AiOutlineRight} from "react-icons/ai";
 // comp
@@ -17,6 +16,11 @@ function Courses({courses}) {
     const course = courses.find((course) => course._id === courseId);
     const {pathname} = useLocation();
     const currentPage = pathname.split("/");
+
+    // Check if course is defined, if not, return an error message
+    if (!course) {
+        return <div>Course not found</div>;
+    }
 
     /**
      * JSX

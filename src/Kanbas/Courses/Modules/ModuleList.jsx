@@ -1,6 +1,12 @@
-import React, {useState} from "react";
+import React from "react";
 import {useParams} from "react-router-dom";
-import {modules as initialmodules} from "../../Database/index.js";
+import {useDispatch, useSelector} from "react-redux";
+import {
+    addModule as addModuleAction,
+    deleteModule as deleteModuleAction,
+    setModule as setModuleAction,
+    updateModule as updateModuleAction,
+} from "./ModulesReducer"; // Assuming you have these actions in modulesReducer
 import {AiOutlineDelete, AiOutlineEdit, AiOutlinePlus} from "react-icons/ai";
 import {VscPassFilled} from "react-icons/vsc";
 import {CiMenuKebab} from "react-icons/ci";
@@ -8,35 +14,9 @@ import {MdDragIndicator} from "react-icons/md";
 
 function ModuleList() {
     const {courseId} = useParams();
-    const [modules, setModules] = useState(initialmodules);
-    const [module, setModule] = useState({
-        name: "New Module",
-        description: "New Description",
-        course: courseId,
-    });
-
-    const addModule = () => {
-        setModules([
-            {...module, _id: new Date().getTime().toString()},
-            ...modules,
-        ]);
-    };
-
-    const deleteModule = (moduleId) => {
-        setModules(modules.filter((module) => module._id !== moduleId));
-    };
-
-    const updateModule = () => {
-        setModules(
-            modules.map((m) => {
-                if (m._id === module._id) {
-                    return module;
-                } else {
-                    return m;
-                }
-            })
-        );
-    };
+    const modules = useSelector((state) => state.modulesReducer.modules);
+    const module = useSelector((state) => state.modulesReducer.module);
+    const dispatch = useDispatch();
 
     return (
         <div className="module__list">
@@ -47,7 +27,8 @@ function ModuleList() {
                 <button className="btn btn-secondary">
                     <VscPassFilled/> Publish All
                 </button>
-                <button onClick={addModule} className="btn btn-danger">
+                <button onClick={() => dispatch(addModuleAction({...module, course: courseId}))}
+                        className="btn btn-danger">
                     <AiOutlinePlus/>
                     Module
                 </button>
@@ -61,17 +42,21 @@ function ModuleList() {
                 <input
                     value={module.name}
                     className="form-control module-input"
-                    onChange={(e) => setModule({...module, name: e.target.value})}
+                    onChange={(e) => dispatch(setModuleAction({...module, name: e.target.value}))}
                     placeholder="Module Name"
                 />
                 <textarea
                     value={module.description}
                     className="form-control module-textarea"
-                    onChange={(e) => setModule({...module, description: e.target.value})}
+                    onChange={(e) => dispatch(setModuleAction({...module, description: e.target.value}))}
                     placeholder="Module Description"
                 />
-                <button onClick={addModule} className="btn btn-success module-btn">Add</button>
-                <button onClick={updateModule} className="btn btn-primary module-btn">Update</button>
+                <button onClick={() => dispatch(addModuleAction({...module, course: courseId}))}
+                        className="btn btn-success module-btn">Add
+                </button>
+                <button onClick={() => dispatch(updateModuleAction(module))}
+                        className="btn btn-primary module-btn">Update
+                </button>
             </div>
             <hr/>
             {/* module list body */}
@@ -93,8 +78,9 @@ function ModuleList() {
                                     </div>
                                     {/* module list icons */}
                                     <div className="module__list__icons">
-                                        <AiOutlineEdit onClick={() => setModule(module)} style={{fontSize: "1.5rem"}}/>
-                                        <AiOutlineDelete onClick={() => deleteModule(module._id)}
+                                        <AiOutlineEdit onClick={() => dispatch(setModuleAction(module))}
+                                                       style={{fontSize: "1.5rem"}}/>
+                                        <AiOutlineDelete onClick={() => dispatch(deleteModuleAction(module._id))}
                                                          style={{fontSize: "1.5rem", color: "red"}}/>
                                         <CiMenuKebab style={{fontSize: "1.5rem"}}/>
                                     </div>

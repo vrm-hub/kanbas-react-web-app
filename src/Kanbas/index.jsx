@@ -4,6 +4,8 @@ import KanbasNavigation from "./KanbasNavigation";
 import Dashboard from "./Dashboard";
 import Courses from "./Courses";
 import {courses as initialCourses} from "./Database/index.js";
+import store from "./store";
+import {Provider} from "react-redux";
 
 function Kanbas() {
     const [courses, setCourses] = useState(initialCourses); // Initial state from db or an empty array
@@ -15,7 +17,7 @@ function Kanbas() {
     });
 
     const addNewCourse = () => {
-        setCourses([...courses, {...course, _id: new Date().getTime()}]);
+        setCourses([...courses, {...course, _id: new Date().getTime().toString()}]);
     };
 
     const deleteCourse = (courseId) => {
@@ -35,38 +37,34 @@ function Kanbas() {
     };
 
     return (
-        <div>
-            <KanbasNavigation/>
+        <Provider store={store}>
             <div>
-                <Routes>
-                    <Route path="/" element={<Navigate to="Dashboard"/>}/>
-                    <Route
-                        path="Account"
-                        element={
-                            <div style={{left: "110px", position: "relative"}}>
-                                <h1>Account</h1>
-                            </div>
-                        }
-                    />
-                    <Route
-                        path="Dashboard"
-                        element={
-                            <Dashboard
-                                courses={courses}
-                                course={course}
-                                setCourse={setCourse}
-                                addNewCourse={addNewCourse}
-                                deleteCourse={deleteCourse}
-                                updateCourse={updateCourse}
-                            />
-                        }
-                    />
-                    <Route path="Courses/:courseId/*"
-                           element={<Courses courses={courses}/>}/> {/* Pass courses to Courses component if needed */}
-                    <Route path="Calendar" element={<h1 style={{left: "110px", position: "relative"}}>Calendar</h1>}/>
-                </Routes>
+                <KanbasNavigation/>
+                <div>
+                    <Routes>
+                        <Route path="/" element={<Navigate to="Dashboard"/>}/>
+                        <Route
+                            path="Dashboard"
+                            element={
+                                <Dashboard
+                                    courses={courses}
+                                    course={course}
+                                    setCourse={setCourse}
+                                    addNewCourse={addNewCourse}
+                                    deleteCourse={deleteCourse}
+                                    updateCourse={updateCourse}
+                                />
+                            }
+                        />
+                        <Route path="Courses/:courseId/*"
+                               element={<Courses
+                                   courses={courses}/>}/> {/* Pass courses to Courses component if needed */}
+                        <Route path="Calendar"
+                               element={<h1 style={{left: "110px", position: "relative"}}>Calendar</h1>}/>
+                    </Routes>
+                </div>
             </div>
-        </div>
+        </Provider>
     );
 }
 
