@@ -1,11 +1,8 @@
 import React from "react";
 import {useParams} from "react-router-dom";
-import {assignments, modules} from "../../Database";
+import {assignments} from "../../Database";
 // icons
-import {CiMenuKebab} from "react-icons/ci";
-import {VscPassFilled} from "react-icons/vsc";
-import {AiOutlinePlus} from "react-icons/ai";
-import {MdDragIndicator} from "react-icons/md";
+import Modules from "../Modules";
 
 const rightPanelData = [
     {name: "Importing Existing Content"},
@@ -29,53 +26,10 @@ const Home = () => {
     return (
         <div className="home">
             {/* home buttons */}
-            <div className="home__btns">
-                <button className="btn btn-secondary">Collpase All</button>
-                <button className="btn btn-secondary">View Progress</button>
-                <button className="btn btn-secondary">
-                    <VscPassFilled/> Publish All
-                </button>
-                <button className="btn btn-danger">
-                    <AiOutlinePlus/>
-                    Module
-                </button>
-                <button className="btn btn-secondary">
-                    <CiMenuKebab/>
-                </button>
-            </div>
             <hr/>
             <div className="home__body__layout">
-                {/* home body */}
                 <div className="home__body">
-                    {modules
-                        ?.filter((module) => module.course === courseId)
-                        .map((module, index) => (
-                            <React.Fragment key={index}>
-                                {/* home items */}
-                                <div className="home__item">
-                                    <div className="home__item__head">
-                                        <div className="home__item__head__left">
-                                            <p>
-                                                <MdDragIndicator
-                                                    style={{fontSize: "1.5rem", marginBottom: "-.5rem"}}
-                                                />
-                                            </p>
-                                            <h3>{module.name}</h3>
-                                        </div>
-                                        {/* home icons */}
-                                        <div className="home__icons">
-                                            <VscPassFilled
-                                                style={{color: "green", fontSize: "1.5rem"}}
-                                            />
-                                            <AiOutlinePlus style={{fontSize: "1.5rem"}}/>
-                                            <CiMenuKebab style={{fontSize: "1.5rem"}}/>
-                                        </div>
-                                    </div>
-                                    {/* home description */}
-                                    <div className="home__desc">{module.description}</div>
-                                </div>
-                            </React.Fragment>
-                        ))}
+                    <Modules/>
                 </div>
                 {/* home right panel */}
                 <div className="home__right__panel">
