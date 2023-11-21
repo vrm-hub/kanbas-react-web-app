@@ -1,0 +1,250 @@
+.main-edit-assignment-container {
+    display:flex;
+}
+
+.wd-green {
+    color: green;
+}
+
+.wd-red{
+    color:red;
+}
+
+.wd-edit-main-page{
+    width: 190vh;
+    height: 100vh;
+    padding: 1.5rem;
+ }
+ 
+
+.wd-custom-hamburger::before {
+    font-size: 1.8rem;
+    color: #D41B2C;
+    cursor: pointer;
+    margin: 0 auto;
+}
+
+.wd-profile-name-text{
+    font-size: 1.5rem;
+    padding-left: 5px;
+    position: relative;
+}
+
+
+
+.account-header{
+    margin: 0.5rem 0 1rem 0;
+}
+
+.wd-custom-divider{
+    margin-top:-10px;
+    height: 2px;
+    background: grey;
+}
+
+.wd-course-navigation{
+    width: 200px;
+}
+
+.wd-navigation-element{
+    padding: 0.10rem;
+    margin: 0.20rem;
+}
+
+.wd-navigation-element a{
+    text-decoration: none;
+    position: relative;
+    color: red;
+
+}
+.wd-navigation-element a:hover{
+    text-decoration: none;
+    color: black;
+    position: relative;
+    padding-left: 3px;
+    border-left: 2px solid black;
+}
+
+
+.wd-navigation-element-title{
+    color: red;
+
+}
+.wd-navigation-element-active a{
+    text-decoration: none;
+    color: black;
+    padding-left: 3px;
+    border-left: 2px solid black;
+}
+
+.wd-navigation-element-title-active{
+    color: black;
+}
+
+.wd-navigation-head-text {
+   padding: 1.25rem 0 1.25rem 1.25rem;
+   font-size: 0.75rem;
+}
+.wd-grey{
+   color: grey;
+}
+
+.wd-pointer {
+    cursor: pointer;
+}
+
+
+.wd-custom-breadcrumb-header a{
+   text-decoration: none;
+   color: crimson; 
+    font-size: 1.175rem;
+    text-decoration: none;
+    font-weight: 300;
+    /* padding-left: 5px; */
+    position: relative;
+    font-family: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.wd-margin-divider {
+   margin-top: 20px;
+}
+
+
+.inline {
+   display: inline;
+}
+
+.wd-button-width {
+   width: 100%;
+}
+
+
+.wd-custom-margin {
+   margin-left: 1px;
+   margin-right: 1px;
+}
+
+.wd-green {
+   color: green;
+}
+
+.wd-red{
+   color:red;
+}
+
+
+.wd-custom-margin-edit-assignment{
+    margin-left: 2px;
+}
+
+.ma-10 {
+    margin: 1rem 0;
+}
+
+.ma-050 {
+    margin: 0 0.5rem;
+}
+.wd-form-select-style{
+    display: inline;
+    width: 30%;
+    padding: 0.375rem 2.25rem 0.375rem 0.75rem;
+    -moz-padding-start: calc(0.75rem - 3px);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+
+    vertical-align: top;
+    background-color: #fff;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    border: 1px solid #ced4da;
+    border-radius: 0.375rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.form-margin{
+    margin-top: 20px !important;
+    margin-left: 20px !important;
+}
+
+.submission-type {
+    border: 1px solid black; 
+    width: 85vh;
+    height: 45vh;
+    padding: 20px; 
+}
+
+.submission-type select {
+    width: 65vh;
+}
+
+.wd-custom-text {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+
+.wd-label-text{
+    text-align: right;
+    margin-right: 0.1rem;
+}
+
+.wd-custom-div-assigns {
+    border: 0.10rem solid rgb(230, 229, 229);
+    width: 65vh;
+    padding: 10px;
+}
+
+.wd-custom-button-width{
+    width: 150px;
+}
+
+.wd-align-items-start{
+    align-items: flex-start!important;
+}
+
+.wd-custom-breadcrumb-header-active{
+    font-size: 1.175rem;
+    text-decoration: none;
+    padding-left: 5px;
+    position: relative;
+    color: rgba(77, 77, 77, 0.96);
+    font-family: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+.wd-breadcrumb-header{
+    font-size: 1.175rem;
+    text-decoration: none;
+    position: relative;
+    color: rgba(77, 77, 77, 0.96);
+    font-family: LatoWeb, "Lato Extended", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.wd-course-status-btn{
+    margin: 0 0.25rem;
+    color: green !important;
+    background-color:rgb(220, 218, 218) !important; 
+    border-color:grey !important;
+}
+
+
+
+.wd-submission-type{
+    border: 1px solid darkgrey;width: inherit;height: auto;padding: 20px;
+}
+
+
+.wd-course-action-buttons-custom{
+    padding: 5px;
+}
+.wd-account-navigation-active .wd-navigation-element-title {
+    padding-left: 8px;
+    border-left: 2px solid black;
+    color: black;
+}
+
