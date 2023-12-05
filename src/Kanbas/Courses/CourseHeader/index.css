@@ -1,0 +1,19 @@
+.kanbas-course-header {
+    width: 90vw;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+.kanbas-course-header-link {
+    text-decoration: none;
+    color: red;
+}
+
+.kanbas-course-header-divider {
+    color: black;
+}
+
+.kanbas-course-breadcrumb {
+    --bs-breadcrumb-divider: '>';
+    font-size: 20px;
+}

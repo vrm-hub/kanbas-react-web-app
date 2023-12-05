@@ -1,0 +1,27 @@
+.kanbas-nav-link {
+    text-decoration: none;
+    background-color: black;
+    border: none;
+    text-align: center;
+    padding-right: 0;
+    padding-left: 0;
+    color: white;
+}
+
+.kanbas-nav-sidebar {
+    width: 85px;
+    height: 100vh;
+}
+
+.kanbas-nav-icon {
+    color: red;
+    font-size: 30px;
+}
+
+.kanbas-nav-active {
+    background-color: white;
+    border-right: 1px solid black;
+    color: red;
+}
+
+

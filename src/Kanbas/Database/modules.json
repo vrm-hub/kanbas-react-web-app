@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Week 0 - Introduction",
+        "description": "Introduction to the course",
+        "course": "RS101",
+        "_id": 1
+    },
+    {
+        "name": "Week 1 - HTML",
+        "description": "Introduction to HTML",
+        "course": "RS101",
+        "_id": 2
+    },
+    {
+        "name": "Week 2 - JS",
+        "description": "Introduction to JS",
+        "course": "RS101",
+        "_id": 3
+    },
+    {
+        "name": "Week 0 - Introduction",
+        "description": "Introduction to JS",
+        "course": "RS102",
+        "_id": 4
+    },
+    {
+        "name": "Week 1 - HTML",
+        "description": "Introduction to JS",
+        "course": "RS102",
+        "_id": 5
+    },
+    {
+        "name": "Week 2 - JS",
+        "description": "Introduction to JS",
+        "course": "RS102",
+        "_id": 6
+    },
+    {
+        "name": "Week 0 - Introduction",
+        "description": "Introduction to JS",
+        "course": "RS103",
+        "_id": 7
+    },
+    {
+        "name": "Week 1 - HTML",
+        "description": "Introduction to JS",
+        "course": "RS103",
+        "_id": 8
+    },
+    {
+        "name": "Week 2 - JS",
+        "description": "Introduction to JS",
+        "course": "RS103",
+        "_id": 9
+    }
+]

@@ -1,0 +1,27 @@
+.kanbas-nav-list {
+    width: 200px;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.kanbas-nav-list-item {
+    color: red;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 14px;
+    border: none;
+}
+
+.kanbas-nav-list-item:first-child {
+    border-top-left-radius: 0px;
+}  
+
+.kanbas-nav-list-item:last-child {
+    border-bottom-left-radius: 0px;
+}  
+
+.kanbas-nav-active {
+    color: black;
+    border-left: 1px solid black;
+    border-top-left-radius: 0px;
+}
